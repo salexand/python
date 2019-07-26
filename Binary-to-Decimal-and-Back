@@ -1,0 +1,18 @@
+''' Convert binary to decimal
+'''
+def bin2dec(b):
+  print ('Binary value of ',b, 'is ')
+  power2mult = len(b)
+  totalSum = 0
+  reversedB = str(b)[::-1]
+
+  for i in (range(power2mult)):
+    totalSum += int(reversedB[i]) * 2**i
+  return totalSum
+  
+print(bin2dec('100'))
+
+    
+
+
+
