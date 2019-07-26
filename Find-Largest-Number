@@ -1,0 +1,13 @@
+# Find the largest number
+
+def largestN(num):
+  currLargest = float('-inf')
+  for i in range(len(num)):
+    if num[i] > currLargest:
+      currLargest = num[i]
+  return currLargest
+
+# List of numbers to find the largest number
+l1 = [1,100,40,200,90,10000,99,990]
+print(largestN(l1))
+
