@@ -1,0 +1,11 @@
+'''
+Find size of the largest square of 1 formable given a 2 dimension matrix of 1s and 0s. 
+A square is defined as a square shape composed of 1.
+Eg: 
+1 1 0 1 0
+0 1 1 1 0
+1 1 1 1 0
+0 1 1 1 1
+The largest square is of size: 3 (1st row-2nd column through 3rd row-3rd column)
+'''
+
