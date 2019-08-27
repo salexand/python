@@ -1,0 +1,25 @@
+'''
+Given an array of numbers that repeat, find the single number that does not repeat
+Assumptions:
+1) Array of integers.
+2) Repeating elements cannot repeat more than once.
+3) 
+Approach:
+Iterate through every element and check if element exists in a "visited" list.
+If it does not exist in the list, add it
+IF it does exist in the list, remove it from there.
+This will ensure that if element exists in list, one of 2 conditions is true:
+a) Element has been encountered only once so far
+'''
+arr = [20,10,3,5,20,10,3,5,6,6,7]
+
+def findOdd(arr):
+  visited = list()
+  for ele in arr:
+    if ele in visited:
+      visited.remove(ele)
+    else:
+      visited.append(ele)
+  return visited
+
+  print("Element occurring odd number of times:", findOdd(arr))
