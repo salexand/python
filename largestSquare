@@ -7,5 +7,15 @@ Eg:
 1 1 1 1 0
 0 1 1 1 1
 The largest square is of size: 3 (1st row-2nd column through 3rd row-3rd column)
+Assumptions:
+1) Matrix is provided as lists
 '''
 
+  inp = [ [1,1,0,1,0],
+          [0,1,1,1,0],
+          [1,1,1,1,0],
+          [0,1,1,1,1]
+        ]
+      
+def findLargestSquare(inp):
+  
