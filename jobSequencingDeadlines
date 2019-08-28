@@ -1,0 +1,13 @@
+'''
+You are a multi-talended free-lancer and can work multiple jobs like Uber, Lyft, Coding, Carpentry
+When you woke up in the morning, your email contained 10 jobs you had to choose from.
+Pick a list of jobs to do that day such that you make maximum money
+Assumptions:
+1) The list of jobs is provided.
+2) Profit associated with each job is provided
+3) Jobs cannot be done parallely (ie: no overlap)
+4) A job has to be completed before picking another job.
+'''
+
+jobList = ['Uber-Hotel, 'Lyft-Airport', 'Carpentry-Table', 'Uber-Hospital', 'Carpentry-Door', 'Lyft-Disney', 'Uber-School']
+profitList = [100,90,200,150,100,80,90]
