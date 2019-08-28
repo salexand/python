@@ -13,7 +13,14 @@ Algorithm:
 2) 
 '''
 
-jobList = ['Uber-Hotel, 'Lyft-Airport', 'Carpentry-Table', 'Uber-Hospital', 'Carpentry-Door', 'Lyft-Disney', 'Uber-School']
+jobList = ['Uber-Hotel', 'Lyft-Airport', 'Carpentry-Table', 'Uber-Hospital', 'Carpentry-Door', 'Lyft-Disney', 'Uber-School']
 profitList = [200,390,100,800,590,400,620]
 deadlineList = [2,3,2,4,5,6,1]
+
+#Zip 3 lists into one list of tuples to sort
+zipped = list(zip(jobList,profitList,deadlineList))
+#Now sort descending order of profit
+zipped.sort(reverse = True ,key = lambda x: x[1])
+#Break zipped list into 3 individual lists
+jobList,profitList,deadlineList = zip(*zipped)
 
