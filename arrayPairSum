@@ -1,0 +1,10 @@
+'''
+Given an array and a number, find all unique pairs in the array that add upto number
+Algorithm:
+Iterate through the array checking for each element if the 2nd addend exists in the array
+If it does, put both numbers in a set. This will ensure unique values
+'''
+
+l1 = [-1,8,9,2,4,3,7,5]
+numb = 7
+
