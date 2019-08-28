@@ -1,13 +1,19 @@
 '''
 You are a multi-talended free-lancer and can work multiple jobs like Uber, Lyft, Coding, Carpentry
-When you woke up in the morning, your email contained 10 jobs you had to choose from.
-Pick a list of jobs to do that day such that you make maximum money
+When you woke up in the morning, your email contained several jobs you had to choose from.
+Pick a list of jobs and a sequence to do them that day such that you make maximum money
 Assumptions:
 1) The list of jobs is provided.
 2) Profit associated with each job is provided
-3) Jobs cannot be done parallely (ie: no overlap)
-4) A job has to be completed before picking another job.
+3) Deadline for each job is provided
+4) Jobs cannot be done parallely (ie: no overlap)
+5) A job has to be completed before picking another job.
+Algorithm:
+1) Sort the lists based on decreasing order of profitability
+2) 
 '''
 
 jobList = ['Uber-Hotel, 'Lyft-Airport', 'Carpentry-Table', 'Uber-Hospital', 'Carpentry-Door', 'Lyft-Disney', 'Uber-School']
-profitList = [100,90,200,150,100,80,90]
+profitList = [200,390,100,800,590,400,620]
+deadlineList = [2,3,2,4,5,6,1]
+
