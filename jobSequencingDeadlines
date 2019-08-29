@@ -24,3 +24,6 @@ zipped.sort(reverse = True ,key = lambda x: x[1])
 #Break zipped list into 3 individual lists
 jobList,profitList,deadlineList = zip(*zipped)
 
+newDead = dict{}
+newDead.
+newDead.append(deadlineList[0]) = jobList[0]
