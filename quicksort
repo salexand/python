@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 14 07:21:58 2019
+
+Implement a quicksort in python
+
+@author: Lovebirds
+"""
+
+'''
+Given a list of unique integers, do a quicksort and return sorted list of integers
+
+- Pick the last element of list as pivot
+- For each element to left of pivot, re-arrange if it is less than or greater than pivot
+
+'''
+unsorted = [90,20,3,6,14,10,2]
+unsorted1 = [190,120,32,9,2,6,14,10,2]
+us = [10,10]
+us1 = [10,5,5]
+
+def quicksort(l1):
+    less    = list()
+    greater = list()
+    equal   = list()
+    #Only sort if there are elements to do so
+    if len(l1) > 1:
+        # Arbitarily assign the first element as pivot
+        pivot = l1[0]
+        # Classify all elements wrt pivot into 3 lists
+        for elem in l1:
+            if elem < pivot:
+                less.append(elem)
+            elif elem > pivot:
+                greater.append(elem)
+            else:
+                equal.append(elem)
+        # Keep doing same actions as above on 3 lists
+        return (quicksort(less) + equal + quicksort(greater))
+    else:
+        # Only a single element. List is already sorted
+        return(l1)
+            
+#print(quicksort(unsorted))
+print(quicksort(us))
