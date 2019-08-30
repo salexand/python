@@ -1,0 +1,4 @@
+'''
+Given a list of numbers and another shuffled list of numbers that is identical to the first except for a missing number, 
+find the missing number
+'''
