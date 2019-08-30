@@ -1,4 +1,12 @@
 '''
 Given a list of numbers and another shuffled list of numbers that is identical to the first except for a missing number, 
 find the missing number
+Assumptions:
+1) Numbers are not sorted in either array
+2) Array can be of any length
+3) Only integers (negative and non-negative) in both arrays
+4) Arrays can contain duplicates
+Algorithm:
+
 '''
+
