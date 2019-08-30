@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug 10 13:06:46 2019
+
+@author: Lovebirds
+"""
+
+def check_if_anagram(s1,s2):
+    
+    if len(s1) != len(s2):
+
+        print("Not an Anagram, lengths differ")
+        return False
+
+    else:
+
+        for elem in s1:
+            if elem in s2:
+                Found = True
+            else:
+                print("Not an Anagram, s1 character not in s2")
+                return False
+
+        for elem2 in s2:
+            if elem2 in s1:
+                Found = True
+            else:
+                print("Not an Anagram, s1 character not in s2")
+                return False
+            
+    return Found
+
