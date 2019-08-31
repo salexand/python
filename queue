@@ -1,0 +1,10 @@
+'''
+Create a queue. Methods it has are:
+1) addFront(item) which adds an item to the front of the queue
+   addRear(item) which adds an item to the rear of the queue
+   removeFront() which removes item from the front of the queue
+   removeRear() which removes item from the rear of the queue
+   isEmpty() which tests to see the queue is empty
+   size() which returns size of Queue.
+
+'''
