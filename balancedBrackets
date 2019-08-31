@@ -6,9 +6,9 @@ Assumptions:
 3) String is non-null
 Algorithm:
 1) Parse every character in string
-2) When encountering a character put it in dictionary and increment count
+2) When encountering any opening characters (eg: ( or { or [ ), increment a counter.
 3) When encountering the opposite of the character decrement count
-4) At end of string, any key with non zero value is unbalanced.
+4) At end of string if the count is not zero, the brackets are not balanced
 '''
 # Test with these input values
 s1 = '{[()]}'
