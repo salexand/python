@@ -22,19 +22,26 @@ class stack():
         self.items.append(dataToPush)
     
     def pop(self):
-        return(self.items.pop())
-        
+        stackLen = len(self.items)
+        if stackLen == 1:
+            temp = self.items[0]
+            del self.items[0]
+            return(temp)
+        elif stackLen < 1:
+            return("Stack is already empty")
+        else:
+            return(self.items.pop())
+            
     def display(self):
         print(self.items)
     
     def size(self):
         return len(self.items)
-        
+
+    def isEmpty(self):    
+        return len(self.items) == 0
         
 s1 = stack()
 s1.push(100)
 s1.push(200)
 s1.push(300)
-
-
-        
