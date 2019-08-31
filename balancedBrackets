@@ -1,0 +1,40 @@
+'''
+Given a string of opening and closing brackets, check if they are balanced. 
+Assumptions:
+1) There are 3 types of brackets: [ { and ( 
+2) No other character occurs in the string except one or more of these three brackets
+3) String is non-null
+Algorithm:
+1) Parse every character in string
+2) When encountering a character put it in dictionary and increment count
+3) When encountering the opposite of the character decrement count
+4) At end of string, any key with non zero value is unbalanced.
+'''
+
+s1 = '{[()]}'
+s2 = '{{}[]()'
+
+def balancedBracket(s1):
+  checkBalDict = dict()
+  for char in s1:
+    if char == '{':
+      checkBalDict['CB'] += 1
+    elif char == '(':
+      checkBalDict['PARB'] += 1
+    elif char == '[':
+      checkBalDict['SQB'] += 1
+    elif char == '}':
+      checkBalDict['CB'] -= 1
+    elif char == ')':
+      checkBalDict['PARB'] -= 1
+    elif char == ']':
+      checkBalDict['SQB'] -= 1
+    else:
+      return "Incorrect character encountered"
+   
+    
+    
+    
+  
+
+
