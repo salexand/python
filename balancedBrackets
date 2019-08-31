@@ -10,31 +10,20 @@ Algorithm:
 3) When encountering the opposite of the character decrement count
 4) At end of string, any key with non zero value is unbalanced.
 '''
-
+# Test with these input values
 s1 = '{[()]}'
 s2 = '{{}[]()'
+s3 = '}{][)('
 
 def balancedBracket(s1):
-  checkBalDict = dict()
+  balanced = 0
   for char in s1:
-    if char == '{':
-      checkBalDict['CB'] += 1
-    elif char == '(':
-      checkBalDict['PARB'] += 1
-    elif char == '[':
-      checkBalDict['SQB'] += 1
-    elif char == '}':
-      checkBalDict['CB'] -= 1
-    elif char == ')':
-      checkBalDict['PARB'] -= 1
-    elif char == ']':
-      checkBalDict['SQB'] -= 1
+    if (char == '{' or char == '(' or char == '[') :
+        balanced += 1
+    elif (char == '}' or char == ')' or char == ']'):
+        balanced -= 1
     else:
-      return "Incorrect character encountered"
-   
-    
-    
-    
-  
+        return "Incorrect character encountered"
+  return balanced == 0
 
-
+print(balancedBracket(s3))
