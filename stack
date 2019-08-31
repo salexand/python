@@ -1,0 +1,40 @@
+'''
+Implementing a Stack.
+Main operations are:
+    push(data)
+    Takes an argument which is the data to add to stack. Returns nothing
+    pop()
+    Does not take an argument. Returns the item removed from the stack
+    size()
+    Checks how many elements constitute the stack
+    peek()
+    Examines what the top item in the stack is. Does not remove it
+    isEmpty()
+    Takes no argument. Checks if stack is empty. Returns Boolean (True/False)
+    
+'''
+
+class stack():
+    def __init__(self):
+        self.items = list()
+        
+    def push(self,dataToPush):
+        self.items.append(dataToPush)
+    
+    def pop(self):
+        return(self.items.pop())
+        
+    def display(self):
+        print(self.items)
+    
+    def size(self):
+        return len(self.items)
+        
+        
+s1 = stack()
+s1.push(100)
+s1.push(200)
+s1.push(300)
+
+
+        
