@@ -1,0 +1,37 @@
+'''
+Given a string, check if it is comprised of unique characters
+Assumptions:
+1) String is not empty
+2) String may have multiple characters that repeat
+3) String is composed of only alpha-numeric characters (no whitespace)
+4) Find only if the string is unique or not. No need to find the duplicate characters
+Tests:
+Given string: "abcdef", Output True,
+Given string: "aabbcdef" Output False (since a and b are repeating)
+
+Algorithm:
+For each character in string, check if it occurs in a list called found (initialized to empty)
+If it does not, add to this list
+If it does, stop and output the value False
+else if end of string is reached, output True (since no duplicate values were encountered)
+'''
+
+
+s1 = 'abcdefghijklmnop'
+s2 = 'abcdefghijkllmnop'
+
+def isStringUnique(s1):
+  #Create empty list to store values of string to check
+  found = list()
+  #Iterate through string 
+  for sval in s1:
+    #If sval exists in found, we have seen it before so string is not unique  
+    if sval in found:
+      return "String is not Unique. Found dupe: " + sval
+    #else if sval not in found, string is unique so far so mark as seen
+    else:
+      found.append(sval)
+  #At this point, since we have not seen characters in string in found, it is unique
+  return "String is Unique"
+   
+print(isStringUnique(s1))
