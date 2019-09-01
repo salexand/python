@@ -7,15 +7,17 @@ If it does, put both numbers in a set. This will ensure unique values
 
 l1 = [-1,8,9,2,4,3,7,5]
 numb = 7
-set1 = set()
+# Create a new empty set which will hold answer pairs
+outputSet = set()
 
 def findAns(l1,sumVal):
   for ele in l1:
-    # Create the number which when added to number from list will equal number to find
+    # Create target number which when added to number currently seen from list will equal number to find
     addend2 = numb - ele
     # Check if this new number exists in the list
     if addend2 in l1:
-      # Add the two addends that will equal number to find
-      set1.add((min(ele,addend2),max(ele,addend2)))
-  return set1
-
+      # Yes, it exists so save this answer by adding both numbers to output set
+      outputSet.add((min(ele,addend2),max(ele,addend2)))
+  return outputSet
+  
+print(findAns(l1,numb))
