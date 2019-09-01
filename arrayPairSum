@@ -2,7 +2,7 @@
 Given an array and a number, find all unique pairs in the array that add upto number
 Algorithm:
 Iterate through the array checking for each element if the 2nd addend exists in the array
-If it does, put both numbers in a set. This will ensure unique values
+If it does, put both numbers in a set. Using a set ensures unique answer values only can be added
 '''
 
 l1 = [-1,8,9,2,4,3,7,5]
@@ -17,6 +17,7 @@ def findAns(l1,sumVal):
     # Check if this new number exists in the list
     if addend2 in l1:
       # Yes, it exists so save this answer by adding both numbers to output set
+      # Add elements in order of smaller element first and then larger element to ensure no duplicates added
       outputSet.add((min(ele,addend2),max(ele,addend2)))
   return outputSet
   
