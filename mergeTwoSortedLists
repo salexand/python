@@ -1,0 +1,13 @@
+'''
+Given two sorted arrays, merge them into a sorted array
+Assumptions:
+1) Arrays are non-empty
+2) Arrays don't contain dupes (later on: enhance solution to take this into account)
+
+Algo:
+1) Iterate through array 1 and compare head of this array with head of 2nd array
+2) Pop out smaller element into new array.
+3) If elements are equal, pop them both into new array
+4) Continue until array 1 is exhausted
+5) Dump in all elements from array 2 into new array
+'''
