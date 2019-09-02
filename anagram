@@ -1,32 +1,48 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Aug 10 13:06:46 2019
-
-@author: Lovebirds
-"""
+'''
+Check if two strings are anagrams of each other
+Assumptions:
+1) Disregard whitespace
+Algo:
+1) First attempt is O(n^2) since "in" list check is o(n))
+2) Replace with new algo that just sorts strings and does straight compare
+'''
 
 def check_if_anagram(s1,s2):
-    
+    # First strip all white space out of both strings
+    s1 = s1.replace (' ','')
+    s2 = s2.replace (' ','')
+    # Edge case. If strings are different length, don't even bother
     if len(s1) != len(s2):
-
         print("Not an Anagram, lengths differ")
         return False
-
     else:
-
         for elem in s1:
             if elem in s2:
                 Found = True
             else:
                 print("Not an Anagram, s1 character not in s2")
                 return False
-
         for elem2 in s2:
             if elem2 in s1:
                 Found = True
             else:
                 print("Not an Anagram, s1 character not in s2")
                 return False
-            
     return Found
 
+def optimized_anagram_checker(s1,s2):
+#Optimized anagram checker
+    # First strip all white space out of both strings
+    s1 = s1.replace (' ','')
+    s2 = s2.replace (' ','')
+    # Edge case. If strings are different length, don't even bother
+    if len(s1) != len(s2):
+        print("Not an Anagram, lengths differ")
+        return False
+    else:
+        
+        
+string1 = 'm ine'
+string2 = 'nime'
+
+print(check_if_anagram(string1,string2))
