@@ -3,7 +3,8 @@ Given two sorted arrays, merge them into a sorted array
 Assumptions:
 1) Arrays are non-empty
 2) Arrays don't contain dupes (later on: enhance solution to take this into account)
-
+3) Assume sorted input lists are provided. Head of list is at index 0
+    
 Algo:
 1) Iterate through array 1 and compare head of this array with head of 2nd array
 2) Pop out smaller element into new array.
@@ -11,3 +12,40 @@ Algo:
 4) Continue until array 1 is exhausted
 5) Dump in all elements from array 2 into new array
 '''
+
+#Input arrays
+l1 = [1,6,9,10,15]
+l2 = [4,5,8,11,15,30,40]
+
+def mergeSorted(list1,list2):
+    #Edge case: If 2nd list is empty, nothing to merge
+    if not list2:
+        return list1
+    else:
+        #create output list
+        result = list()
+        # while elements exist in list1 and list2 process.
+        # when one of the lists is exhausted, exit while and add contents
+        # of remaining loop into result
+        while list1 and list2:
+            #head of list 1 is smaller than list2 so pop into output
+            if list1[0] < list2[0]:
+                result.append(list1.pop(0))
+            #else both lists have head equal so pop both into output
+            elif list1[0] == list2[0]:
+                result.append(list1.pop(0))
+                result.append(list2.pop(0))
+            #list2 head is greater than list1's head so pop into output
+            else:
+                result.append(list2.pop(0))
+            
+        #Out of while loop, so one list is exhausted
+        # l1 is empty, so dump contents of l2 into output
+        if not list1:
+            result.extend(list2)
+        #l2 is empty, so dump remaining contents of l1 into output
+        else:
+            result.extend(list1)
+    return result
+
+print(mergeSorted(l1,l2))
