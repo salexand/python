@@ -1,0 +1,45 @@
+'''
+Find duplicate number in list
+Given a list of numbers: [10,15,2,9,60,2]
+find whether any duplicate numbers occur within an array
+Algo:
+    1) Naive method will compare each element in the list with next element.
+    2) Convert list to set and this will remove the duplicate. Convert back to list
+    3) Use empty list method.
+    4) Use ordered dictionary from python's collections library
+'''
+
+
+#l1 = [10,15,2,9,60,200,900,550,600]
+n = 10000
+l1 = list(range(0,n))
+l1.append(1)
+#l1 = [10,3,4]
+
+def naive_DupeChecker(l1):
+    for i in range(len(l1)):
+        for j in range((i+1),len(l1)):
+            if l1[i] == l1[j]:
+                return 'Dupes exist'
+    return 'No Dupes' 
+           
+def list2set_DupeChecker(l1):
+    l1len = len(l1)
+    s1len = len(set(l1))
+    if l1len == s1len:
+        return 'No Dupes'
+    else:
+        return 'Dupes exist'
+
+def emptyList_DupeChecker(l1):
+    foundList = list()
+    for ele in l1:
+        if ele in foundList:
+            return 'Dupes exist'
+        else: 
+            foundList.append(ele)
+    return 'No Dupes'
+    
+print(naive_DupeChecker(l1))
+print(list2set_DupeChecker(l1))
+print(emptyList_DupeChecker(l1))
