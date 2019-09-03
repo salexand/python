@@ -1,0 +1,9 @@
+'''
+We are building an electronic voting machine, in which voters can choose from a list of candidates or write in another candidate.
+Implment system which will allow for fast counting of votes
+Algo:
+1) For each candidate on ballot, capture vote cast in a dictionary as key and value pair.
+2) When voting concludes, output dictionary to see winner.
+'''
+
+def voter:
