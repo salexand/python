@@ -27,14 +27,14 @@ def strCompress(s1):
         #Emptry string to hold compressed string version
         r = ''
         while i < strLen:
-            
             if (s1[i-1] == s1[i]):                
                 cnt = cnt + 1
             else:
+                #Character stopped repeating. Capture repeat sequence of previous character and reset count
                 r = r + str(cnt) + s1[i-1]
                 cnt = 1
             i = i + 1
+    #Final case needs to be captured separately
     r = r + str(cnt) + s1[i-1]
     return r
-        
-  
+      
