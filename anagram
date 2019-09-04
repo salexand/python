@@ -40,9 +40,12 @@ def optimized_anagram_checker(s1,s2):
         print("Not an Anagram, lengths differ")
         return False
     else:
-        
-        
-string1 = 'm ine'
-string2 = 'nime'
+        if sorted(s1) == sorted(s2):
+            return True
+        else:
+            return False
 
-print(check_if_anagram(string1,string2))
+# Now test the implementations           
+string1 = 'maine'
+string2 = 'nime'
+print(optimized_anagram_checker(string1,string2))
