@@ -22,7 +22,7 @@ to save your voice.
 
 '''
 
-cap1 = ['F','F','B','B','B','F','B','B','B','F','F','F','F']
+cap1 = ['F','F','B','B','B','F','B','B','B','F','F','F','F','B']
 
 def countIntervals(l1):
     startInterval = forward = backward = 0
