@@ -22,7 +22,7 @@ to save your voice.
 
 '''
 
-cap1 = ['F','F','B','B','B','F','B','B','B','F','F','F','F','B']
+cap1 = ['F','F','F','B','B','F','B','B','B','F','F','F','F','B']
 
 def countIntervals(l1):
     startInterval = forward = backward = 0
@@ -36,9 +36,13 @@ def countIntervals(l1):
             if l1[startInterval] == 'F':
                 forward += 1 
             elif l1[startInterval] == 'B':
-                backward += 1 
+                backward += 1
+            #Reset start now that new interval is beginning    
             startInterval = i
-    #Final interval needs to be recorded separately    
+    #Final interval needs to be recorded separately 
+    #This is because we only add an interval when we realize that we are past it. 
+    #This happens when we see a caps list entry that is different from caps[start]. 
+    #But this doesn’t happen for the last interval
     interval.append((startInterval,i-1,l1[startInterval]))
     if l1[startInterval] == 'F':
         forward += 1 
@@ -48,7 +52,7 @@ def countIntervals(l1):
     print('Forward intervals: ',forward)
     print('Backward intervals: ',backward)
     return interval
-
+    
 print(countIntervals(cap1))
         
             
