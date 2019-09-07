@@ -1,0 +1,55 @@
+'''
+Let’s say we have a whole bunch of people in line waiting to see a baseball game. 
+They are all hometown fans and each person is wearing a team cap. 
+However, not all of them are wearing the caps in the same way—some are wearing their 
+caps in the normal way, and some are wearing them backward.
+
+You are the gatekeeper and can only let the fans into the stadium if the entire group 
+has their caps on the same way—either all forward or all backward. 
+
+Because everyone has different definitions of forward and backward, you can’t tell them 
+to wear their caps forward or backward. You can only tell them to flip their caps. 
+
+The good news is that each person knows what position they are in the line, with 
+the first person having position 0 and the last one position n − 1. 
+
+You can say things like:
+Person in position i, please flip your cap.
+People in positions i through j (inclusive), please flip your caps.
+
+But what you would like to do is minimize the number of requests you have to shout, 
+to save your voice.
+
+'''
+
+cap1 = ['F','F','B','B','B','F','B','B','B','F','F','F','F']
+
+def countIntervals(l1):
+    startInterval = forward = backward = 0
+    interval = list()
+    for i in range(1,len(l1)):
+        #Past value of cap is different from current value.
+        #Meaning an interval has occurred. Store it
+        if l1[startInterval] != l1[i]:
+            interval.append((startInterval,i-1,l1[startInterval]))
+            #Store count of intervals with hat flipped forward or backward
+            if l1[startInterval] == 'F':
+                forward += 1 
+            elif l1[startInterval] == 'B':
+                backward += 1 
+            startInterval = i
+    #Final interval needs to be recorded separately    
+    interval.append((startInterval,i-1,l1[startInterval]))
+    if l1[startInterval] == 'F':
+        forward += 1 
+    elif l1[startInterval] == 'B':
+        backward += 1 
+        startInterval = i
+    print('Forward intervals: ',forward)
+    print('Backward intervals: ',backward)
+    return interval
+
+print(countIntervals(cap1))
+        
+            
+            
